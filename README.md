@@ -1,4 +1,4 @@
-# Geback (geback)
+# Gebäck (Gebäck)
 
 Web de pastelería con QuasarJS
 

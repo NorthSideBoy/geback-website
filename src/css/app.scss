@@ -1,1 +1,20 @@
 // app global css in SCSS form
+@font-face {
+    font-family: 'giza';
+    src: url('/public/fonts/Giza.otf') format('truetype');
+  }
+  
+  @font-face {
+    font-family: 'giza-stencil';
+    src: url('/public/fonts/Giza-Stencil.otf') format('truetype');
+  }
+
+  @font-face {
+    font-family: 'january-night';
+    src: url('/public/fonts/January-Night.ttf') format('truetype');
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
