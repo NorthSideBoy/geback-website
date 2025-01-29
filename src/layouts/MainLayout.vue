@@ -37,8 +37,8 @@
             </div>
           </div>
           <div class="q-pl-lg q-pr-lg flex flex-center">
-            <q-btn size="xs" color="white" class="q-ml-sm" round flat v-for="network, index in networks" :key="index"
-              :icon="network.name" :style="network.style"></q-btn>
+            <q-btn @click="open(network.url)" size="xs" color="white" class="q-ml-sm" round flat
+              v-for="network, index in networks" :key="index" :icon="network.name" :style="network.style"></q-btn>
           </div>
 
         </div>
@@ -181,17 +181,28 @@ export default {
     const networks = ref([
       {
         name: "fi-brands-instagram",
-        style: "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);"
+        style: "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);",
+        url: "https://www.instagram.com/geba.ck?igsh=MWxvNXB2ZnRrZWFvMw=="
       },
       {
         name: "fi-brands-tik-tok",
-        style: "background:black"
+        style: "background:black",
+        url: ""
+      },
+      {
+        name: "fi-brands-facebook",
+        style: "background:#0866FF",
+        url: ""
       },
       {
         name: "fi-brands-whatsapp",
-        style: "background:#25D366"
+        style: "background:#25D366",
+        url: "https://wa.me/584143770474"
       }
     ])
+    const open = (url) => {
+      if (url) window.open(url, '_blank')
+    }
     const addProduct = (product) => {
       product = {
         ...product,
@@ -234,7 +245,8 @@ export default {
       addProduct,
       deleteProduct,
       buy,
-      scrollToSection
+      scrollToSection,
+      open
     }
   }
 }

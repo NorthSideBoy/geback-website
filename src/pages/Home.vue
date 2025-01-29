@@ -29,12 +29,17 @@
         <div class=" text-center q-mx-xs-none q-mx-md-xl text-body1 text-bold q-mb-xl"
           style="font-family: 'january-night';font-size: 1.3rem;">
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
-            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-            of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-            like Aldus PageMaker including versions of Lorem Ipsum.
+            En Gebäck, nos enorgullece utilizar solo ingredientes de la más alta calidad para garantizar
+            productos deliciosos y nutritivos. Trabajamos con harina de coco, una alternativa sin gluten rica en fibra y
+            nutrientes que aporta una textura suave y esponjosa, y avena, un superalimento lleno de fibra que ayuda a
+            controlar el colesterol y el azúcar, además de ser rica en vitaminas, minerales y antioxidantes. Utilizamos
+            aceite de coco por su sabor suave y sus beneficios como fuente de energía natural, y endulzamos con stevia
+            no calórica para un dulzor perfecto sin afectar los niveles de glucosa. Incorporamos huevos frescos para
+            textura y nutrientes, cacao puro para un sabor intenso a chocolate, y chocolate sin azúcar ni lácteos al 70%
+            para una experiencia gourmet. Además, añadimos almendras y harina de almendras, ricas en grasas saludables,
+            vitamina E y fibra, ideales para dietas keto o sin gluten. Por último, la zanahoria aporta un dulzor
+            natural, textura húmeda y un extra de vitaminas y antioxidantes. Cada ingrediente es seleccionado con
+            cuidado para ofrecerte lo mejor en sabor y nutrición.
           </p>
         </div>
         <q-img src="https://i.ibb.co/gZSLr4Lv/ingredientes.png" style="max-height: 400px;" fit="contain"></q-img>
@@ -59,22 +64,21 @@
           <div class="col-xs-12 col-md-6" style="display:flex; align-items: center;">
             <div class="text-white q-mx-xs-none q-mx-md-xl text-center text-body1 q-mb-xl">
               <p style="font-family: 'january-night';font-size: 1.3rem;">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into
-                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release
-                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software
-                like Aldus PageMaker including versions of Lorem Ipsum.
+                En Gebäck, nacemos con la convicción de que el placer de un postre delicioso y el bienestar pueden ir de
+                la mano. Somos un emprendimiento dedicado a la elaboración de pasteles y cupcakes artesanales, libres de
+                gluten, lactosa y azúcar, diseñados para quienes buscan disfrutar de la repostería sin comprometer su
+                salud. Utilizamos ingredientes naturales y de alta calidad, como harina de coco, avena, aceite de coco y
+                stevia, para ofrecer productos que no solo son nutritivos, sino también irresistibles. Nuestra misión es
+                endulzar tu vida con opciones saludables, sin sacrificar el sabor ni la textura que amas.
                 <br>
                 <br>
-                It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                Nos enorgullece ser una marca comprometida con la comunidad de El Tigre, promoviendo una alimentación
+                consciente y un estilo de vida saludable. A través de nuestros productos, buscamos inspirar a las
+                personas a adoptar hábitos más equilibrados, ofreciendo alternativas que se adaptan a diversas
+                necesidades dietéticas, como celiacos, intolerantes a la lactosa o quienes simplemente desean reducir su
+                consumo de azúcar. En Gebäck, no solo creamos postres, sino que también construimos una comunidad unida
+                por el amor a la repostería saludable y el bienestar. ¡Descubre con nosotros el placer de lo dulce,
+                hecho con amor y cuidado!
               </p>
             </div>
           </div>
@@ -91,9 +95,9 @@
             Conoce a Nuestro Equipo
           </h2>
           <p class="text-body1" style="max-width: 500px; font-family: 'january-night'; font-size: 1.3rem;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore
-            magna aliqua.
+            En Gebäck, nuestro equipo está formado por jóvenes
+            emprendedores apasionados por la repostería saludable. Juntos, combinamos creatividad, dedicación y un
+            compromiso con la calidad para ofrecer postres deliciosos, libres de gluten, lactosa y azúcar.
           </p>
         </div>
         <div class="row justify-start items-center">
@@ -166,8 +170,8 @@
     <footer class="bg-primary q-pa-md">
       <div class="container text-center" style="font-family: 'january-night';">
         <div class="row justify-center q-mb-md q-gutter-md">
-          <q-btn size="xs" color="white" round flat v-for="network, index in networks" :key="index"
-            :icon="network.name" :style="network.style"></q-btn>
+          <q-btn @click="open(network.url)" size="xs" color="white" round flat v-for="network, index in networks"
+            :key="index" :icon="network.name" :style="network.style"></q-btn>
         </div>
         <div class="row justify-center q-gutter-xs-md q-gutter-lg-xl text-white" style="font-size: 1.4rem;">
           <p class="hover-underline" @click="scrollToSection('home')">Home</p>
@@ -202,28 +206,42 @@ export default {
     const networks = ref([
       {
         name: "fi-brands-instagram",
-        style: "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);"
+        style: "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);",
+        url: "https://www.instagram.com/geba.ck?igsh=MWxvNXB2ZnRrZWFvMw=="
       },
       {
         name: "fi-brands-tik-tok",
-        style: "background:black"
+        style: "background:black",
+        url: ""
+      },
+      {
+        name: "fi-brands-facebook",
+        style: "background:#0866FF",
+        url: ""
       },
       {
         name: "fi-brands-whatsapp",
-        style: "background:#25D366"
+        style: "background:#25D366",
+        url: "https://wa.me/584143770474"
       }
     ])
 
     const members = ref([{
       name: "Crisdei",
       lastname: "Fuentes",
-      positions: ["Gafa"],
+      positions: ["Fundadora", "Producción", "Finanzas"],
       image: "https://i.ibb.co/przVf7qN/logo.png"
     },
     {
-      name: "Said",
-      lastname: "Lucena",
-      positions: ["Developer"],
+      name: "Juan",
+      lastname: "Guzman",
+      positions: ["Fundador", "Finanzas", "Marketing"],
+      image: "https://i.ibb.co/przVf7qN/logo.png"
+    },
+    {
+      name: "Anabella",
+      lastname: "Ramos",
+      positions: ["Fundadora", "Producción", "Marketing"],
       image: "https://i.ibb.co/przVf7qN/logo.png"
     }
     ])
@@ -267,70 +285,124 @@ export default {
       opacity: 0.2
     }
 
-    const products = ref([{
-      name: "Torta de Zanahoria",
-      description: "Deliciosa torta de zanahoria con un suave glaseado de queso crema, perfecta para cualquier ocasión.",
-      prize: 25.99,
-      image: "https://coosol.es/wp-content/uploads/2023/05/rebanada-pastel-zanahoria-dulce-mesa-madera-1.jpg",
-      amount: 1
-    },
-    {
-      name: "Yogur con Frutas y Granola",
-      description: "Un delicioso yogur natural acompañado de una mezcla de frutas frescas y granola crujiente.",
-      prize: 5,
-      image: "https://www.calidadpascual.com/wp-content/uploads/2022/10/db100ca2174cd1335e50bae480e19634.jpeg",
-      amount: 1
-    },
-    {
-      name: "Brownies de Batata",
-      description: "Brownies ricos y húmedos hechos con batata, endulzados naturalmente y sin gluten.",
-      prize: 4,
-      image: "https://danzadefogones.com/wp-content/uploads/2016/02/Brownie-de-batata-2.jpg",
-      amount: 1
-    },
-    {
-      name: "Helado de Plátano",
-      description: "Un helado cremoso y saludable hecho solo con plátanos congelados.",
-      prize: 3,
-      image: "https://i.blogs.es/4f4ec3/helado-platano-cacahuete-rec/1366_2000.jpg",
-      amount: 1
-    },
-    {
-      name: "Galletas de Avena y Pasas",
-      description: "Galletas suaves y masticables hechas con avena integral y pasas.",
-      prize: 2,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdC_IUoq-ATkLQzo0fqYwkhU0iIkzYPDnCHw&s",
-      amount: 1
-    },
-    {
-      name: "Pudín de Chía",
-      description: "Pudín cremoso hecho con semillas de chía y leche de almendras, endulzado con miel.",
-      prize: 6,
-      image: "https://deliciaskitchen.b-cdn.net/wp-content/uploads/2015/07/pudin-de-chia-chia-pudding.jpg",
-      amount: 1
-    },
-    {
-      name: "Tarta de Manzana Saludable",
-      description: "Tarta de manzana sin azúcar, hecha con masa integral y rellena de manzanas frescas.",
-      prize: 7,
-      image: "https://i0.wp.com/avenayaguacate.com/wp-content/uploads/2019/11/IMG_3126.jpg?fit=750%2C938&ssl=1",
-      amount: 1
-    },
-    {
-      name: "Mousse de Aguacate y Cacao",
-      description: "Un mousse cremoso y rico en antioxidantes, hecho con aguacate y cacao puro.",
-      prize: 5,
-      image: "https://images.cookforyourlife.org/wp-content/uploads/2015/08/avacado-chocolate-mousee-e1720199735827.jpg",
-      amount: 1
-    }
-
+    const products = ref([
+      {
+        name: "Pastel de Zanahoria",
+        description: "Elaborado con harina de coco, zanahorias frescas, nueces y endulzado con stevia. Libre de gluten, lactosa y azúcar.",
+        prize: 20,
+        image: "https://www.santa-lucia.ec/wp-content/uploads/2024/03/torta_zanahoria.png",
+        amount: 1
+      },
+      {
+        name: "Pastel de Zanahoria (Porción)",
+        description: "Elaborado con harina de coco, zanahorias frescas, nueces y endulzado con stevia. Libre de gluten, lactosa y azúcar.",
+        prize: 5,
+        image: "https://paulasapron.com/wp-content/uploads/2023/04/El-Mejor-Carrot-Cake_Mejor-Tarta-de-Zanahoria-para-Cualquier-Ocasion-3-683x1024.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel Matilda",
+        description: "Un pastel de chocolate intenso, hecho con cacao puro, chocolate sin azúcar al 70% y endulzado con stevia. Ideal para los amantes del chocolate.",
+        prize: 25,
+        image: "https://www.hersheyland.mx/content/dam/Hersheyland_Mexico/es_mx/recipes/recipe-images/grocery-abril/pastel.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel Matilda (Porción)",
+        description: "Un pastel de chocolate intenso, hecho con cacao puro, chocolate sin azúcar al 70% y endulzado con stevia. Ideal para los amantes del chocolate.",
+        prize: 6,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4qbm4zFsDI6HwdifyJDnt6ThxljskZSj66A&s",
+        amount: 1
+      },
+      {
+        name: "Pastel de Naranja",
+        description: "Un pastel refrescante y esponjoso, elaborado con avena, jugo de naranja natural y endulzado con stevia. Perfecto para cualquier ocasión.",
+        prize: 20,
+        image: "https://i.ytimg.com/vi/-iVRsm7a_Qs/maxresdefault.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel de Naranja(Porción)",
+        description: "Un pastel refrescante y esponjoso, elaborado con avena, jugo de naranja natural y endulzado con stevia. Perfecto para cualquier ocasión.",
+        prize: 5,
+        image: "https://www.nutricienta.com/imagenes/recetas/receta-nutricienta-torta-naranja-y-zanahoria-por-fiore.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel de Fresas",
+        description: "Un postre ligero y delicioso, hecho con fresas frescas, avena y crema batida sin lactosa. Endulzado con stevia para un toque saludable.",
+        prize: 20,
+        image: "https://i.ytimg.com/vi/N7uiPpKSFbU/maxresdefault.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel de Fresas(Porción)",
+        description: "Un postre ligero y delicioso, hecho con fresas frescas, avena y crema batida sin lactosa. Endulzado con stevia para un toque saludable.",
+        prize: 5,
+        image: "https://www.laylita.com/recetas/wp-content/uploads/2014/05/Pastel-de-fresa-con-solo-4-ingredientes.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel de Piña",
+        description: "Un pastel tropical con trozos de piña natural, avena y azúcar de coco. Libre de gluten, lactosa y azúcar refinada.",
+        prize: 20,
+        image: "https://i.pinimg.com/736x/23/46/51/23465113112c0a89d5558a782d676d59.jpg",
+        amount: 1
+      },
+      {
+        name: "Pastel de Piña(Porción)",
+        description: "Un pastel tropical con trozos de piña natural, avena y azúcar de coco. Libre de gluten, lactosa y azúcar refinada.",
+        prize: 5,
+        image: "https://dulcesdiabeticos.com/wp-content/uploads/2019/05/Porcion-de-bizcocho-de-pina-sin-azucar-facebook-opt.jpg",
+        amount: 1
+      },
+      {
+        name: "Cupcakes de Zanahoria",
+        description: "Cupcakes esponjosos hechos con harina de coco, zanahorias y nueces. Endulzados con stevia y perfectos para un snack saludable.",
+        prize: 2,
+        image: "https://es.cravingsjournal.com/wp-content/uploads/2022/10/muffins-de-zanahoria-y-avena-6.jpg",
+        amount: 1
+      },
+      {
+        name: "Cupcakes de Chocolate",
+        description: "Cupcakes de chocolate intenso, elaborados con cacao puro y chocolate sin azúcar. Ideales para los amantes del chocolate.",
+        prize: 3,
+        image: "https://desplaza.me/wp-content/uploads/2023/10/Muffins-de-Avena-y-Chocolate-sin-Azucar-receta-500x375.jpg",
+        amount: 1
+      },
+      {
+        name: "Cupcakes de Naranja",
+        description: "Cupcakes refrescantes con jugo de naranja natural y avena. Endulzados con stevia para un toque saludable.",
+        prize: 2.5,
+        image: "https://okdiario.com/img/2016/08/20/istock-484514951-1-655x368.jpg",
+        amount: 1
+      },
+      {
+        name: "Cupcakes de Fresas",
+        description: "Cupcakes ligeros y deliciosos, hechos con fresas frescas y crema batida sin lactosa. Perfectos para cualquier ocasión.",
+        prize: 2.5,
+        image: "https://okdiario.com/img/recetas/2017/05/11/muffins-de-fresas.jpg",
+        amount: 1
+      },
+      {
+        name: "Cupcakes de Piña",
+        description: "Cupcakes tropicales con trozos de piña natural y azúcar de coco. Una opción saludable y deliciosa.",
+        prize: 2.5,
+        image: "https://minichef.net/wp-content/uploads/2020/05/muffins-de-pina-con-leche-de-coco.jpg",
+        amount: 1
+      }
     ])
 
     const dataStore = useDataStore()
 
     const addProduct = (product) => {
       dataStore.addProduct(product)
-      console.log(dataStore.products)
+      $q.notify({
+        color: "blue",
+        icon: "done",
+        textColor: "white",
+        message: "¡Añadido al carrito!"
+      })
     }
 
     const scrollToSection = (id) => {
@@ -341,10 +413,13 @@ export default {
       }
     }
 
+    const open = (url) => {
+      if (url) window.open(url, '_blank')
+    }
+
     onMounted(async () => {
       paginateMembers.value = members.value.slice(0, paginationMembers.value.rowsPerPage)
       calculatePagesMembers()
-      console.log(products.value)
     })
 
     return {
@@ -361,6 +436,7 @@ export default {
       networks,
       addProduct,
       scrollToSection,
+      open
     }
   },
 }
