@@ -50,7 +50,7 @@
               </h2>
             </div>
             <div class="col-12 q-mb-xl">
-              <q-img src="/public/torta.png" class="q-my-auto" fit="contain" style="max-height: 400px;">
+              <q-img src="https://i.ibb.co/Ng59sDyC/torta.png" class="q-my-auto" fit="contain" style="max-height: 400px;">
 
               </q-img>
             </div>
