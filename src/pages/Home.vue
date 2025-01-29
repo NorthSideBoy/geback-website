@@ -10,11 +10,11 @@
               </h2>
             </div>
             <div>
-              <q-img src="/public/logo1.png" style="max-height: 400px;" fit="contain"></q-img>
+              <q-img src="https://i.ibb.co/KcKHjcLX/logo1.png" style="max-height: 400px;" fit="contain"></q-img>
             </div>
           </div>
           <div class="col-6" v-if="$q.screen.width >= 1024">
-            <q-img src="/public/cake1.png" class="fit" fit="contain">
+            <q-img src="https://i.ibb.co/spwZBDhQ/cake1.png" class="fit" fit="contain">
 
             </q-img>
           </div>
@@ -37,7 +37,7 @@
             like Aldus PageMaker including versions of Lorem Ipsum.
           </p>
         </div>
-        <q-img src="/public/ingredientes.png" style="max-height: 400px;" fit="contain"></q-img>
+        <q-img src="https://i.ibb.co/gZSLr4Lv/ingredientes.png" style="max-height: 400px;" fit="contain"></q-img>
       </div>
     </section>
     <section id="about">
@@ -198,13 +198,13 @@ export default {
       name: "Crisdei",
       lastname: "Fuentes",
       positions: ["Gafa"],
-      image: "/public/logo.png"
+      image: "https://i.ibb.co/przVf7qN/logo.png"
     },
     {
       name: "Said",
       lastname: "Lucena",
       positions: ["Developer"],
-      image: "/public/logo.png"
+      image: "https://i.ibb.co/przVf7qN/logo.png"
     }
     ])
 

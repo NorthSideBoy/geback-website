@@ -115,7 +115,7 @@
     <q-drawer behavior="mobile" show-if-above v-model="leftDrawerOpen" class="bg-primary shadow-5" side="left"
       :width="200" :breakpoint="400">
       <div class="q-pa-lg" style="height: 150px">
-        <q-img src="../../public/logo1.png" fit="contain" class="full-height full-width">
+        <q-img src="https://i.ibb.co/KcKHjcLX/logo1.png" fit="contain" class="full-height full-width">
         </q-img>
       </div>
       <q-list class="q-gutter-sm" padding>
