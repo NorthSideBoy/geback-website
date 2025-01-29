@@ -50,7 +50,8 @@
               </h2>
             </div>
             <div class="col-12 q-mb-xl">
-              <q-img src="https://i.ibb.co/Ng59sDyC/torta.png" class="q-my-auto" fit="contain" style="max-height: 400px;">
+              <q-img src="https://i.ibb.co/Ng59sDyC/torta.png" class="q-my-auto" fit="contain"
+                style="max-height: 400px;">
 
               </q-img>
             </div>
@@ -164,6 +165,10 @@
     </section>
     <footer class="bg-primary q-pa-md">
       <div class="container text-center" style="font-family: 'january-night';">
+        <div class="row justify-center q-mb-md q-gutter-md">
+          <q-btn size="xs" color="white" round flat v-for="network, index in networks" :key="index"
+            :icon="network.name" :style="network.style"></q-btn>
+        </div>
         <div class="row justify-center q-gutter-xs-md q-gutter-lg-xl text-white" style="font-size: 1.4rem;">
           <p class="hover-underline" @click="scrollToSection('home')">Home</p>
           <p class="hover-underline" @click="scrollToSection('about')">About Us</p>
@@ -193,6 +198,21 @@ export default {
   setup() {
 
     const $q = useQuasar()
+
+    const networks = ref([
+      {
+        name: "fi-brands-instagram",
+        style: "background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);"
+      },
+      {
+        name: "fi-brands-tik-tok",
+        style: "background:black"
+      },
+      {
+        name: "fi-brands-whatsapp",
+        style: "background:#25D366"
+      }
+    ])
 
     const members = ref([{
       name: "Crisdei",
@@ -338,6 +358,7 @@ export default {
       barStyle,
       paginationMembers,
       products,
+      networks,
       addProduct,
       scrollToSection,
     }
